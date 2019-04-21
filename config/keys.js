@@ -1,5 +1,5 @@
-module.exports = {
-  mongoURI:
-    "mongodb+srv://lotus:lotus@cluster0-yzqu5.mongodb.net/buddha_connect?retryWrites=true",
-  secretOrKey: "boogieman"
-};
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./keys_prod");
+} else {
+  module.exports = require("./keys_dev");
+}

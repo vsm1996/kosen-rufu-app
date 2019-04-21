@@ -11,7 +11,7 @@ router.get("/test", (req, res) => {
   res.json({ msg: "posts works" });
 });
 
-// Load Validatrion
+// Load Validation
 const validatePostInput = require("../../validation/post");
 
 // @route   Get api/posts
