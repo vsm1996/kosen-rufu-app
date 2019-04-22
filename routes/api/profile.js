@@ -25,7 +25,7 @@ router.get(
   (req, res) => {
     const errors = {};
     Profile.findOne({ user: req.user.id })
-      .populate("user", ["name"])
+      .populate("user", ["name", "avatar"])
       .then(profile => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
@@ -43,7 +43,7 @@ router.get(
 router.get("/all", (req, res) => {
   const errors = {};
   Profile.find()
-    .populate("user", ["name"])
+    .populate("user", ["name", "avatar"])
     .then(profiles => {
       if (!profiles) {
         errors.noprofile = "There are no profiles";
@@ -119,6 +119,7 @@ router.post(
     if (req.body.location) profileFields.location = req.body.location;
     if (req.body.bio) profileFields.bio = req.body.bio;
     if (req.body.status) profileFields.status = req.body.status;
+    if (req.body.title) profileFields.title = req.body.title;
 
     // Social
     profileFields.social = {};
