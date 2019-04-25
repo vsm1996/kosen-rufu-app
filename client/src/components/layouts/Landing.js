@@ -20,8 +20,8 @@ class Landing extends Component {
                   <h1 className="display-3 mb-4">Buddha Connector</h1>
                   <p className="lead">
                     {" "}
-                    Create a profile, share experiences, create posts and get
-                    meet other SGI members and guests!
+                    Create a profile, share experiences, create posts and meet
+                    other SGI members and guests!
                   </p>
                   <hr />
                   <Link to="/register" className="btn btn-lg btn-info mr-2">
